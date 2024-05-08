@@ -1,0 +1,11 @@
+C:\Users\HP\source\repos\Segment Color-Mappin\Segment Color-Mappin\obj\Debug\Segment Color-Mappin.csproj.AssemblyReference.cache
+C:\Users\HP\source\repos\Segment Color-Mappin\Segment Color-Mappin\obj\Debug\Segment Color-Mappin.csproj.SuggestedBindingRedirects.cache
+C:\Users\HP\source\repos\Segment Color-Mappin\Segment Color-Mappin\obj\Debug\Segment_Color_Mappin.Form1.resources
+C:\Users\HP\source\repos\Segment Color-Mappin\Segment Color-Mappin\obj\Debug\Segment_Color_Mappin.Properties.Resources.resources
+C:\Users\HP\source\repos\Segment Color-Mappin\Segment Color-Mappin\obj\Debug\Segment Color-Mappin.csproj.GenerateResource.cache
+C:\Users\HP\source\repos\Segment Color-Mappin\Segment Color-Mappin\obj\Debug\Segment Color-Mappin.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\Segment Color-Mappin.exe.config
+C:\Users\HP\source\repos\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\Segment Color-Mappin.exe
+C:\Users\HP\source\repos\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\Segment Color-Mappin.pdb
+C:\Users\HP\source\repos\Segment Color-Mappin\Segment Color-Mappin\obj\Debug\Segment Color-Mappin.exe
+C:\Users\HP\source\repos\Segment Color-Mappin\Segment Color-Mappin\obj\Debug\Segment Color-Mappin.pdb
