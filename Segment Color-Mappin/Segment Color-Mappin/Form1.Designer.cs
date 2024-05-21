@@ -28,24 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.image1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.image1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.image1)).BeginInit();
             this.SuspendLayout();
             // 
-            // image1
-            // 
-            this.image1.Location = new System.Drawing.Point(201, 32);
-            this.image1.Name = "image1";
-            this.image1.Size = new System.Drawing.Size(606, 401);
-            this.image1.TabIndex = 0;
-            this.image1.TabStop = false;
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(437, 448);
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Location = new System.Drawing.Point(40, 26);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(134, 41);
             this.button1.TabIndex = 0;
@@ -55,7 +48,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(865, 448);
+            this.button2.Location = new System.Drawing.Point(1071, 594);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(103, 31);
             this.button2.TabIndex = 2;
@@ -70,19 +63,35 @@
             "Colormap 1",
             "Colormap 2",
             "Colormap 3",
-            "Colormap 4"});
-            this.comboBox1.Location = new System.Drawing.Point(847, 41);
+            "Colormap 4",
+            "Colormap 5",
+            "Colormap 6",
+            "Filter 1",
+            "Filter 2",
+            "Blue Colormap",
+            "Red Colormap",
+            "Yellow Colormap"});
+            this.comboBox1.Location = new System.Drawing.Point(1053, 26);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 24);
             this.comboBox1.TabIndex = 3;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // image1
+            // 
+            this.image1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.image1.Location = new System.Drawing.Point(180, 12);
+            this.image1.Name = "image1";
+            this.image1.Size = new System.Drawing.Size(825, 599);
+            this.image1.TabIndex = 0;
+            this.image1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(996, 510);
+            this.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.ClientSize = new System.Drawing.Size(1193, 634);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);

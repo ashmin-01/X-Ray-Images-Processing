@@ -55,6 +55,8 @@ namespace Segment_Color_Mappin
                 int width = Math.Abs(e.X - startPoint.X);
                 int height = Math.Abs(e.Y - startPoint.Y);
 
+                //Console.WriteLine("x: " + x , "y: " + y , "startPoint.X" + startPoint.X + "startPoint.Y" + startPoint.Y);
+
                 selectedRectangle = new Rectangle(x, y, width, height);
                 image1.Invalidate();
             }
@@ -155,9 +157,50 @@ namespace Segment_Color_Mappin
 
                     ApplyColormap1();
                     break;
+                
                 case "Colormap 2":
 
                     ApplyColormap2();
+                    break;
+
+                case "Colormap 3":
+
+                    ApplyColormap3();
+                    break;
+
+                case "Colormap 4":
+
+                    ApplyColormap4();
+                    break;
+                case "Colormap 5":
+
+                    ApplyColormap5();
+                    break;
+                case "Colormap 6":
+
+                    ApplyColormap6();
+                    break;
+                case "Blue Colormap":
+
+                    ApplyBlueColormap();
+                    break;
+                case "Yellow Colormap":
+
+                    ApplyYellowColormap();
+                    break;
+                case "Red Colormap":
+
+                    ApplyRedColormap();
+                    break;
+
+                case "Filter 1":
+
+                    Filter1();
+                    break;
+
+                case "Filter 2":
+
+                    Filter2();
                     break;
             }
         }
@@ -210,8 +253,6 @@ namespace Segment_Color_Mappin
                     {
                         int originalX = originalStartX + j;
                         int originalY = originalStartY + i;
-                        int resultX = j;
-                        int resultY = i;
 
                         if (originalX >= 0 && originalX < rgbImage.Width && originalY >= 0 && originalY < rgbImage.Height)
                         {
@@ -242,6 +283,70 @@ namespace Segment_Color_Mappin
             }
         }
 
+        private void Filter1()
+        {
+            Bitmap resultImage = new Bitmap(rgbImage);
+
+            Color[] heatmapColors = new Color[256];
+            for (int i = 0; i < 256; i++)
+            {
+                if (i <= 63)
+                {
+                    int red = 0;
+                    int green = i * 4; // Gradient from black to green
+                    int blue = 0;
+                    heatmapColors[i] = Color.FromArgb(red, green, blue);
+                }
+                else if (i <= 127)
+                {
+                    int red = 0;
+                    int green = 255 - (i - 64) * 4; // Gradient from green to yellow
+                    int blue = 0;
+                    heatmapColors[i] = Color.FromArgb(red, green, blue);
+                }
+                else if (i <= 191)
+                {
+                    int red = (i - 128) * 4; // Gradient from yellow to red
+                    int green = 255;
+                    int blue = 0;
+                    heatmapColors[i] = Color.FromArgb(red, green, blue);
+                }
+                else
+                {
+                    int red = 255;
+                    int green = 255 - (i - 192) * 4; // Gradient from red to black
+                    int blue = 0;
+                    heatmapColors[i] = Color.FromArgb(red, green, blue);
+                }
+            }
+
+            for (int y = 0; y < rgbImage.Height; y++)
+            {
+                for (int x = 0; x < rgbImage.Width; x++)
+                {
+                    Color pixelColor = rgbImage.GetPixel(x, y);
+                    int intensity = (int)((pixelColor.R + pixelColor.G + pixelColor.B) / 3.0);
+
+                    Color heatmapColor = heatmapColors[intensity];
+                    resultImage.SetPixel(x, y, heatmapColor);
+                }
+            }
+
+            image1.Image = resultImage;
+
+            try
+            {
+                resultImage.Save("C:\\Users\\HP\\source\\repos\\lab1\\lab1\\tree3.jpg");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("WTF");
+            }
+        }
+
+
+
+
         private void ApplyColormap2()
         {
             if (selectedRectangle != null && selectedRectangle.Width > 0 && selectedRectangle.Height > 0)
@@ -265,19 +370,25 @@ namespace Segment_Color_Mappin
                 Color[] heatmapColors = new Color[256];
                 for (int i = 0; i < 256; i++)
                 {
-                    if (i <= 127)
+                    if (i < 51)
                     {
-                        int red = 0;
-                        int green = 0;
-                        int blue = 255;
-                        heatmapColors[i] = Color.FromArgb(red, green, blue);
+                        heatmapColors[i] = Color.Blue; // Intensity 0-50: Blue
+                    }
+                    else if (i < 102)
+                    {
+                        heatmapColors[i] = Color.Cyan; // Intensity 51-101: Cyan
+                    }
+                    else if (i < 153)
+                    {
+                        heatmapColors[i] = Color.Green; // Intensity 102-152: Green
+                    }
+                    else if (i < 204)
+                    {
+                        heatmapColors[i] = Color.Yellow; // Intensity 153-203: Yellow
                     }
                     else
                     {
-                        int red = 255;
-                        int green = 255;
-                        int blue = 0;
-                        heatmapColors[i] = Color.FromArgb(red, green, blue);
+                        heatmapColors[i] = Color.Red; // Intensity 204-255: Red
                     }
                 }
 
@@ -311,10 +422,489 @@ namespace Segment_Color_Mappin
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("WTF");
+                    MessageBox.Show("Error saving the image.");
                 }
             }
         }
+
+        private void Filter2()
+        {
+            Bitmap resultImage = new Bitmap(rgbImage);
+
+            Color[] heatmapColors = new Color[256];
+            for (int i = 0; i < 256; i++)
+            {
+                if (i <= 63)
+                {
+                    int red = 255;
+                    int green = 0;
+                    int blue = 0;
+                    heatmapColors[i] = Color.FromArgb(red, green, blue); // Gradient from black to red
+                }
+                else if (i <= 127)
+                {
+                    int red = 0;
+                    int green = 255;
+                    int blue = i * 2; // Gradient from red to blue
+                    heatmapColors[i] = Color.FromArgb(red, green, blue);
+                }
+                else if (i <= 191)
+                {
+                    int red = 0;
+                    int green = 255 - (i - 128) * 2; // Gradient from blue to cyan
+                    int blue = 255;
+                    heatmapColors[i] = Color.FromArgb(red, green, blue);
+                }
+                else
+                {
+                    int red = (i - 192) * 2; // Gradient from cyan to green
+                    int green = 255;
+                    int blue = 0;
+                    heatmapColors[i] = Color.FromArgb(red, green, blue);
+                }
+            }
+
+            for (int y = 0; y < rgbImage.Height; y++)
+            {
+                for (int x = 0; x < rgbImage.Width; x++)
+                {
+                    Color pixelColor = rgbImage.GetPixel(x, y);
+                    int intensity = (int)((pixelColor.R + pixelColor.G + pixelColor.B) / 3.0);
+
+                    Color heatmapColor = heatmapColors[intensity];
+                    resultImage.SetPixel(x, y, heatmapColor);
+                }
+            }
+
+            image1.Image = resultImage;
+
+            try
+            {
+                resultImage.Save("C:\\Users\\HP\\source\\repos\\lab1\\lab1\\tree4.jpg");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("WTH.");
+            }
+        }
+
+
+        private void ApplyColormap3()
+        {
+            if (selectedRectangle != null && selectedRectangle.Width > 0 && selectedRectangle.Height > 0)
+            {
+                Bitmap resultImage = new Bitmap(rgbImage);
+
+                int startX = selectedRectangle.Left;
+                int startY = selectedRectangle.Top;
+
+                float scaleX = (float)rgbImage.Width / image1.DisplayRectangle.Width;
+                float scaleY = (float)rgbImage.Height / image1.DisplayRectangle.Height;
+
+                int originalStartX = (int)(startX * scaleX);
+                int originalStartY = (int)(startY * scaleY);
+                int originalEndX = (int)((startX + selectedRectangle.Width) * scaleX);
+                int originalEndY = (int)((startY + selectedRectangle.Height) * scaleY);
+
+                int originalWidth = originalEndX - originalStartX;
+                int originalHeight = originalEndY - originalStartY;
+
+                Color[] heatmapColors = new Color[256];
+                for (int i = 0; i < 256; i++)
+                {
+                    if (i <= 127)
+                    {
+                        int red = 0;
+                        int green = i * 2; // Gradient from black to green
+                        int blue = 255 - i * 2; // Gradient from blue to black
+                        heatmapColors[i] = Color.FromArgb(red, green, blue);
+                    }
+                    else
+                    {
+                        int red = (i - 128) * 2; // Gradient from black to red
+                        int green = 255 - (i - 128) * 2; // Gradient from green to black
+                        int blue = 0;
+                        heatmapColors[i] = Color.FromArgb(red, green, blue);
+                    }
+                }
+
+                int drawX = originalStartX;
+                int drawY = originalStartY;
+                for (int i = 0; i < originalHeight; i++)
+                {
+                    for (int j = 0; j < originalWidth; j++)
+                    {
+                        int originalX = originalStartX + j;
+                        int originalY = originalStartY + i;
+
+                        if (originalX >= 0 && originalX < rgbImage.Width && originalY >= 0 && originalY < rgbImage.Height)
+                        {
+                            Color pixelColor = rgbImage.GetPixel(originalX, originalY);
+                            int intensity = (int)((pixelColor.R + pixelColor.G + pixelColor.B) / 3.0);
+                            Color heatmapColor = heatmapColors[intensity];
+                            resultImage.SetPixel(drawX, drawY, heatmapColor);
+                            drawX++;
+                        }
+                    }
+                    drawX = originalStartX;
+                    drawY++;
+                }
+
+                image1.Image = resultImage;
+
+                try
+                {
+                    resultImage.Save("C:\\Users\\HP\\source\\repos\\lab1\\lab1\\tree_colormap3.jpg");
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Error saving the image.");
+                }
+            }
+        }
+
+        private void ApplyColormap4()
+        {
+            if (selectedRectangle != null && selectedRectangle.Width > 0 && selectedRectangle.Height > 0)
+            {
+                Bitmap resultImage = new Bitmap(rgbImage);
+
+                int startX = selectedRectangle.Left;
+                int startY = selectedRectangle.Top;
+
+                float scaleX = (float)rgbImage.Width / image1.DisplayRectangle.Width;
+                float scaleY = (float)rgbImage.Height / image1.DisplayRectangle.Height;
+
+                int originalStartX = (int)(startX * scaleX);
+                int originalStartY = (int)(startY * scaleY);
+                int originalEndX = (int)((startX + selectedRectangle.Width) * scaleX);
+                int originalEndY = (int)((startY + selectedRectangle.Height) * scaleY);
+
+                int originalWidth = originalEndX - originalStartX;
+                int originalHeight = originalEndY - originalStartY;
+
+                Color[] heatmapColors = new Color[256];
+                for (int i = 0; i < 256; i++)
+                {
+                    if (i <= 127)
+                    {
+                        int red = i * 2; // Gradient from black to yellow (yellow is red + green)
+                        int green = i * 2;
+                        int blue = 0;
+                        heatmapColors[i] = Color.FromArgb(red, green, blue);
+                    }
+                    else
+                    {
+                        int red = 0;
+                        int green = 255 - (i - 128) * 2; // Gradient from yellow to cyan (cyan is green + blue)
+                        int blue = (i - 128) * 2;
+                        heatmapColors[i] = Color.FromArgb(red, green, blue);
+                    }
+                }
+
+                int drawX = originalStartX;
+                int drawY = originalStartY;
+                for (int i = 0; i < originalHeight; i++)
+                {
+                    for (int j = 0; j < originalWidth; j++)
+                    {
+                        int originalX = originalStartX + j;
+                        int originalY = originalStartY + i;
+
+                        if (originalX >= 0 && originalX < rgbImage.Width && originalY >= 0 && originalY < rgbImage.Height)
+                        {
+                            Color pixelColor = rgbImage.GetPixel(originalX, originalY);
+                            int intensity = (int)((pixelColor.R + pixelColor.G + pixelColor.B) / 3.0);
+                            Color heatmapColor = heatmapColors[intensity];
+                            resultImage.SetPixel(drawX, drawY, heatmapColor);
+                            drawX++;
+                        }
+                    }
+                    drawX = originalStartX;
+                    drawY++;
+                }
+
+                image1.Image = resultImage;
+
+                try
+                {
+                    resultImage.Save("C:\\Users\\HP\\source\\repos\\lab1\\lab1\\tree_colormap4.jpg");
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("WTH.");
+                }
+            }
+        }
+
+        private void ApplyColormap5()
+        {
+            Bitmap resultImage = new Bitmap(rgbImage);
+
+            // Create the gradient color map from black to blue
+            Color[] heatmapColors = new Color[256];
+            for (int i = 0; i < 256; i++)
+            {
+                int red = 0;
+                int green = 0;
+                int blue = i; // Gradient from black to blue
+                heatmapColors[i] = Color.FromArgb(red, green, blue);
+            }
+
+            for (int y = 0; y < rgbImage.Height; y++)
+            {
+                for (int x = 0; x < rgbImage.Width; x++)
+                {
+                    Color pixelColor = rgbImage.GetPixel(x, y);
+                    int intensity = (int)((pixelColor.R + pixelColor.G + pixelColor.B) / 3.0);
+                    Color heatmapColor = heatmapColors[intensity];
+                    resultImage.SetPixel(x, y, heatmapColor);
+                }
+            }
+
+            image1.Image = resultImage;
+
+            try
+            {
+                resultImage.Save("C:\\Users\\HP\\source\\repos\\lab1\\lab1\\tree_colormap5.jpg");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("WTH.");
+            }
+        }
+
+        private void ApplyColormap6()
+        {
+            Bitmap resultImage = new Bitmap(rgbImage);
+
+            // Create the gradient color map from black to green
+            Color[] heatmapColors = new Color[256];
+            for (int i = 0; i < 256; i++)
+            {
+                int red = 0;
+                int green = i; // Gradient from black to green
+                int blue = 0;
+                heatmapColors[i] = Color.FromArgb(red, green, blue);
+            }
+
+            for (int y = 0; y < rgbImage.Height; y++)
+            {
+                for (int x = 0; x < rgbImage.Width; x++)
+                {
+                    Color pixelColor = rgbImage.GetPixel(x, y);
+                    int intensity = (int)((pixelColor.R + pixelColor.G + pixelColor.B) / 3.0);
+                    Color heatmapColor = heatmapColors[intensity];
+                    resultImage.SetPixel(x, y, heatmapColor);
+                }
+            }
+
+            image1.Image = resultImage;
+
+            try
+            {
+                resultImage.Save("C:\\Users\\HP\\source\\repos\\lab1\\lab1\\tree_colormap5.jpg");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("WTH.");
+            }
+        }
+
+        private void ApplyBlueColormap()
+        {
+            if (selectedRectangle != null && selectedRectangle.Width > 0 && selectedRectangle.Height > 0)
+            {
+                Bitmap resultImage = new Bitmap(rgbImage);
+
+                int startX = selectedRectangle.Left;
+                int startY = selectedRectangle.Top;
+
+                float scaleX = (float)rgbImage.Width / image1.DisplayRectangle.Width;
+                float scaleY = (float)rgbImage.Height / image1.DisplayRectangle.Height;
+
+                int originalStartX = (int)(startX * scaleX);
+                int originalStartY = (int)(startY * scaleY);
+                int originalEndX = (int)((startX + selectedRectangle.Width) * scaleX);
+                int originalEndY = (int)((startY + selectedRectangle.Height) * scaleY);
+
+                int originalWidth = originalEndX - originalStartX;
+                int originalHeight = originalEndY - originalStartY;
+
+                Color[] heatmapColors = new Color[256];
+                for (int i = 0; i < 256; i++)
+                {
+                    int red = 0;
+                    int green = 0;
+                    int blue = i; // Gradient from black to blue
+                    heatmapColors[i] = Color.FromArgb(red, green, blue);
+                }
+
+                int drawX = originalStartX;
+                int drawY = originalStartY;
+                for (int i = 0; i < originalHeight; i++)
+                {
+                    for (int j = 0; j < originalWidth; j++)
+                    {
+                        int originalX = originalStartX + j;
+                        int originalY = originalStartY + i;
+
+                        if (originalX >= 0 && originalX < rgbImage.Width && originalY >= 0 && originalY < rgbImage.Height)
+                        {
+                            Color pixelColor = rgbImage.GetPixel(originalX, originalY);
+                            int intensity = (int)((pixelColor.R + pixelColor.G + pixelColor.B) / 3.0);
+                            Color heatmapColor = heatmapColors[intensity];
+                            resultImage.SetPixel(drawX, drawY, heatmapColor);
+                            drawX++;
+                        }
+                    }
+                    drawX = originalStartX;
+                    drawY++;
+                }
+
+                image1.Image = resultImage;
+
+                try
+                {
+                    resultImage.Save("C:\\Users\\HP\\source\\repos\\lab1\\lab1\\tree_colormap4.jpg");
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("WTH.");
+                }
+            }
+        }
+
+        private void ApplyYellowColormap()
+        {
+            if (selectedRectangle != null && selectedRectangle.Width > 0 && selectedRectangle.Height > 0)
+            {
+                Bitmap resultImage = new Bitmap(rgbImage);
+
+                int startX = selectedRectangle.Left;
+                int startY = selectedRectangle.Top;
+
+                float scaleX = (float)rgbImage.Width / image1.DisplayRectangle.Width;
+                float scaleY = (float)rgbImage.Height / image1.DisplayRectangle.Height;
+
+                int originalStartX = (int)(startX * scaleX);
+                int originalStartY = (int)(startY * scaleY);
+                int originalEndX = (int)((startX + selectedRectangle.Width) * scaleX);
+                int originalEndY = (int)((startY + selectedRectangle.Height) * scaleY);
+
+                int originalWidth = originalEndX - originalStartX;
+                int originalHeight = originalEndY - originalStartY;
+
+                Color[] heatmapColors = new Color[256];
+                for (int i = 0; i < 256; i++)
+                {
+                    int red = i ;
+                    int green = i;
+                    int blue = 0; 
+                    heatmapColors[i] = Color.FromArgb(red, green, blue);
+                }
+
+                int drawX = originalStartX;
+                int drawY = originalStartY;
+                for (int i = 0; i < originalHeight; i++)
+                {
+                    for (int j = 0; j < originalWidth; j++)
+                    {
+                        int originalX = originalStartX + j;
+                        int originalY = originalStartY + i;
+
+                        if (originalX >= 0 && originalX < rgbImage.Width && originalY >= 0 && originalY < rgbImage.Height)
+                        {
+                            Color pixelColor = rgbImage.GetPixel(originalX, originalY);
+                            int intensity = (int)((pixelColor.R + pixelColor.G + pixelColor.B) / 3.0);
+                            Color heatmapColor = heatmapColors[intensity];
+                            resultImage.SetPixel(drawX, drawY, heatmapColor);
+                            drawX++;
+                        }
+                    }
+                    drawX = originalStartX;
+                    drawY++;
+                }
+
+                image1.Image = resultImage;
+
+                try
+                {
+                    resultImage.Save("C:\\Users\\HP\\source\\repos\\lab1\\lab1\\tree_colormap4.jpg");
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("WTH.");
+                }
+            }
+        }
+
+        private void ApplyRedColormap()
+        {
+            if (selectedRectangle != null && selectedRectangle.Width > 0 && selectedRectangle.Height > 0)
+            {
+                Bitmap resultImage = new Bitmap(rgbImage);
+
+                int startX = selectedRectangle.Left;
+                int startY = selectedRectangle.Top;
+
+                float scaleX = (float)rgbImage.Width / image1.DisplayRectangle.Width;
+                float scaleY = (float)rgbImage.Height / image1.DisplayRectangle.Height;
+
+                int originalStartX = (int)(startX * scaleX);
+                int originalStartY = (int)(startY * scaleY);
+                int originalEndX = (int)((startX + selectedRectangle.Width) * scaleX);
+                int originalEndY = (int)((startY + selectedRectangle.Height) * scaleY);
+
+                int originalWidth = originalEndX - originalStartX;
+                int originalHeight = originalEndY - originalStartY;
+
+                Color[] heatmapColors = new Color[256];
+                for (int i = 0; i < 256; i++)
+                {
+                    int red = i;
+                    int green = 0;
+                    int blue = 0;
+                    heatmapColors[i] = Color.FromArgb(red, green, blue);
+                }
+
+                int drawX = originalStartX;
+                int drawY = originalStartY;
+                for (int i = 0; i < originalHeight; i++)
+                {
+                    for (int j = 0; j < originalWidth; j++)
+                    {
+                        int originalX = originalStartX + j;
+                        int originalY = originalStartY + i;
+
+                        if (originalX >= 0 && originalX < rgbImage.Width && originalY >= 0 && originalY < rgbImage.Height)
+                        {
+                            Color pixelColor = rgbImage.GetPixel(originalX, originalY);
+                            int intensity = (int)((pixelColor.R + pixelColor.G + pixelColor.B) / 3.0);
+                            Color heatmapColor = heatmapColors[intensity];
+                            resultImage.SetPixel(drawX, drawY, heatmapColor);
+                            drawX++;
+                        }
+                    }
+                    drawX = originalStartX;
+                    drawY++;
+                }
+
+                image1.Image = resultImage;
+
+                try
+                {
+                    resultImage.Save("C:\\Users\\HP\\source\\repos\\lab1\\lab1\\tree_colormap4.jpg");
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("WTH.");
+                }
+            }
+        }
+
+
+
 
         private void button2_Click_1(object sender, EventArgs e)
         {
