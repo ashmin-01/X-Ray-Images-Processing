@@ -9,3 +9,59 @@ C:\Users\HP\source\repos\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\Seg
 C:\Users\HP\source\repos\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\Segment Color-Mappin.pdb
 C:\Users\HP\source\repos\Segment Color-Mappin\Segment Color-Mappin\obj\Debug\Segment Color-Mappin.exe
 C:\Users\HP\source\repos\Segment Color-Mappin\Segment Color-Mappin\obj\Debug\Segment Color-Mappin.pdb
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\Segment Color-Mappin.exe.config
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\Segment Color-Mappin.exe
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\Segment Color-Mappin.pdb
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\obj\Debug\Segment Color-Mappin.csproj.AssemblyReference.cache
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\obj\Debug\Segment_Color_Mappin.Form1.resources
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\obj\Debug\Segment_Color_Mappin.Properties.Resources.resources
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\obj\Debug\Segment Color-Mappin.csproj.GenerateResource.cache
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\obj\Debug\Segment Color-Mappin.csproj.CoreCompileInputs.cache
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\obj\Debug\Segment Color-Mappin.exe
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\obj\Debug\Segment Color-Mappin.pdb
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\obj\Debug\Segment_Color_Mappin.SearchForm.resources
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\BouncyCastle.Crypto.dll
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\itextsharp.dll
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\itextsharp.xml
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\obj\Debug\Segment .573ED75B.Up2Date
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\Accord.dll.config
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\Accord.dll
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\Accord.Imaging.dll
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\Accord.Math.Core.dll
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\Accord.Math.dll
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\Accord.Statistics.dll
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\AForge.dll
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\AForge.Imaging.dll
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\AForge.Math.dll
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\Microsoft.Win32.Registry.dll
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\NAudio.Asio.dll
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\NAudio.Core.dll
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\NAudio.dll
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\NAudio.Midi.dll
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\NAudio.Wasapi.dll
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\NAudio.WinForms.dll
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\NAudio.WinMM.dll
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\System.Security.AccessControl.dll
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\System.Security.Principal.Windows.dll
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\Accord.xml
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\Accord.Imaging.xml
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\Accord.Math.xml
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\Accord.Math.Core.xml
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\Accord.Statistics.xml
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\AForge.xml
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\AForge.Imaging.xml
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\AForge.Math.xml
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\Microsoft.Win32.Registry.xml
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\NAudio.xml
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\NAudio.Asio.xml
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\NAudio.Core.xml
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\NAudio.Midi.xml
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\NAudio.Wasapi.xml
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\NAudio.WinForms.xml
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\NAudio.WinMM.xml
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\System.Security.AccessControl.xml
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\System.Security.Principal.Windows.xml
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\libmp3lame.32.dll
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\libmp3lame.64.dll
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\NAudio.Lame.dll
+D:\year4 s2\MultiMedia\X-Ray-Images-Processing\Segment Color-Mappin\Segment Color-Mappin\bin\Debug\NAudio.Lame.pdb
